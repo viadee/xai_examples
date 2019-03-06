@@ -24,7 +24,7 @@ public class TitanicExplanation {
         // Our first model to be explained (GBM). Imported from an H2O model pre-built and trained in R
         final H2OModelWrapper h2oModel = new H2OModelWrapper();
         // Obtain a second suitable model (RandomForest). Train it ourselves this time.
-        final TabularRandomForestClassifier randomForestModel = new TabularRandomForestClassifier(1);
+        final TabularRandomForestClassifier randomForestModel = new TabularRandomForestClassifier(100);
         randomForestModel.fit(anchorTabular.getTabularInstances());
 
         // Print the model's test data accuracy
@@ -32,8 +32,10 @@ public class TitanicExplanation {
         outputTestsetAccuracy("RandomForest", randomForestModel);
 
         // Pick instance to be explained
-        // Next pick specific instance (countess)
-        final TabularInstance explainedInstance = anchorTabular.getTabularInstances()[0];
+        // Next pick specific instance (countess or patrick dooley)
+        final TabularInstance explainedInstance = anchorTabular.getTabularInstances()[759];
+        //final TabularInstance explainedInstance = anchorTabular.getTabularInstances()[890];
+
 
         // Create builder that can be used to create an AnchorConstruction instance
         // H2O default builder
