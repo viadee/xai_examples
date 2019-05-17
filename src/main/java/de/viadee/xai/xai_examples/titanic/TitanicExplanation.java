@@ -3,11 +3,17 @@ package de.viadee.xai.xai_examples.titanic;
 import de.viadee.xai.anchor.adapter.classifiers.TabularRandomForestClassifier;
 import de.viadee.xai.anchor.adapter.tabular.AnchorTabular;
 import de.viadee.xai.anchor.adapter.tabular.TabularInstance;
+import de.viadee.xai.anchor.adapter.tabular.TabularPerturbationFunction;
+import de.viadee.xai.anchor.adapter.tabular.dmn.DMN_Explainer;
 import de.viadee.xai.anchor.algorithm.AnchorConstructionBuilder;
 import de.viadee.xai.anchor.algorithm.AnchorResult;
 import de.viadee.xai.anchor.algorithm.global.CoveragePick;
+import javafx.scene.control.Tab;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.function.Function;
@@ -16,6 +22,8 @@ import java.util.function.Function;
  * Main entry comprising all steps to create both local and global explanations
  */
 public class TitanicExplanation {
+    private static final Logger LOGGER = LoggerFactory.getLogger(TitanicExplanation.class);
+
 
     public static void main(String[] args) throws IOException {
         // Load dataset and its description
@@ -41,10 +49,11 @@ public class TitanicExplanation {
         // H2O default builder
         final AnchorConstructionBuilder<TabularInstance> h2oBuilder = anchorTabular
                 .createDefaultBuilder(h2oModel::predict, explainedInstance);
+        h2oBuilder.setTau(0.8).setTauDiscrepancy(0.15);
         // RandomForest default builder
         final AnchorConstructionBuilder<TabularInstance> randomForestBuilder = anchorTabular
                 .createDefaultBuilder(randomForestModel, explainedInstance);
-
+        randomForestBuilder.setTau(0.5);
 
         // Create local explanations
         System.out.println("====H2O Local Explanation====");
@@ -54,9 +63,9 @@ public class TitanicExplanation {
 
         // Create global explanations
         System.out.println("====H2O Global Explanation====");
-        printGlobalExplanationResult(anchorTabular, h2oBuilder);
+        printGlobalExplanationResult(anchorTabular, h2oBuilder, false);
         System.out.println("====Random Forest Global Explanation====");
-        printGlobalExplanationResult(anchorTabular, randomForestBuilder);
+        printGlobalExplanationResult(anchorTabular, randomForestBuilder, false);
     }
 
     private static void printLocalExplanationResult(TabularInstance instance, AnchorTabular tabular,
@@ -73,13 +82,37 @@ public class TitanicExplanation {
     }
 
     private static void printGlobalExplanationResult(AnchorTabular tabular,
-                                                     AnchorConstructionBuilder<TabularInstance> builder) {
+                                                     AnchorConstructionBuilder<TabularInstance> builder, boolean dmnOutput) {
         // Use the CoveragePick algorithm to create global explanations
         final List<AnchorResult<TabularInstance>> globalExplanations = new CoveragePick<>(builder, 10,
                 Executors.newCachedThreadPool(), null)
                 .run(tabular.getTabularInstances(), 20);
 
         System.out.println(tabular.getVisualizer().visualizeGlobalResults(globalExplanations));
+
+
+        // DMN Decision Table Builder
+        if(dmnOutput == true) {
+            OutputStream outputStream = new OutputStream() {
+                private StringBuilder string = new StringBuilder();
+
+                @Override
+                public void write(int b) throws IOException {
+                    this.string.append((char) b);
+                }
+
+                public String toString() {
+                    return this.string.toString();
+                }
+            };
+            LOGGER.debug(outputStream.toString());
+            try {
+                outputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            DMN_Explainer.createDMNglobalExplanation(globalExplanations, System.out);
+        }
     }
 
 
@@ -95,6 +128,5 @@ public class TitanicExplanation {
         System.out.println("====" + name + " Testset Accuracy====" + System.lineSeparator() +
                 matches / (double) testData.length);
     }
-
 
 }
