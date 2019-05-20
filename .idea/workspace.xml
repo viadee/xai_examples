@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6706df4e-cb62-445d-bc99-acb6d09429e6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/titanic/TitanicExplanation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/titanic/TitanicExplanation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnOML/ChurnOMLExplanation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnOML/ChurnOMLExplanation.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -17,68 +15,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnOML/churnOML_H2OModelWrapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="59" column="89" selection-start-line="59" selection-start-column="89" selection-end-line="59" selection-end-column="89" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnKaggle/ChurnKaggleExplanation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-646">
-              <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/banking2/Banking2ModelWrapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="50" column="58" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="50" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/banking2/Banking2Explanation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="111" column="5" lean-forward="true" selection-start-line="79" selection-start-column="4" selection-end-line="111" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/australian_credit/AustralianExplanation.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/spambase/Spambase_H2OModelWrapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
+            <state relative-caret-position="-389">
+              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnOML/ChurnOMLExplanation.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/spambase/SpambaseDataset.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="114" column="5" lean-forward="true" selection-start-line="82" selection-start-column="4" selection-end-line="114" selection-end-column="5" />
+            <state relative-caret-position="223">
+              <caret line="46" column="88" lean-forward="true" selection-start-line="46" selection-start-column="88" selection-end-line="47" selection-end-column="85" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/titanic/TitanicExplanation.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/spambase/SpambaseExplanation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="116" selection-start-line="83" selection-start-column="4" selection-end-line="116" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="680">
+              <caret line="53" column="3" selection-start-line="53" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -119,10 +78,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/log4j.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/de/viadee/xai/anchor/titanic/TitanicDataset.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/viadee/xai/anchor/titanic/TitanicExplanation.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/resources/gender_submission.csv" />
         <option value="$PROJECT_DIR$/src/main/resources/test.csv" />
@@ -158,10 +113,22 @@
         <option value="$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnOML/ChurnOMLDataset.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnOML/churnOML_H2OModelWrapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/titanic/TitanicExplanation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnOML/ChurnOMLExplanation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnKaggle/ChurnKaggleExplanation.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/banking2/Banking2Explanation.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/australian_credit/AustralianExplanation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnKaggle/ChurnKaggleExplanation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnOML/ChurnOMLExplanation.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/creditg/test_creditg.csv" />
+        <option value="$PROJECT_DIR$/src/main/resources/creditg/train_creditg.csv" />
+        <option value="$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/creditg/ChurnOMLExplanation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/creditg/CreditgDataset.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/creditg/Creditg_H2OModelWrapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/spambase/train_spambase.csv" />
+        <option value="$PROJECT_DIR$/src/main/resources/spambase/test_spambase.csv" />
+        <option value="$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/spambase/ChurnOMLExplanation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/creditg/CreditgExplanation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/spambase/SpambaseExplanation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/spambase/SpambaseDataset.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/spambase/Spambase_H2OModelWrapper.java" />
       </list>
     </option>
   </component>
@@ -194,8 +161,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -272,6 +239,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="xai_examples" type="462c0819:PsiDirectoryNode" />
+              <item name="creditg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xai_examples" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xai_examples" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="xai_examples" type="462c0819:PsiDirectoryNode" />
               <item name="titanic" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -287,7 +263,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="churnOML" type="462c0819:PsiDirectoryNode" />
+              <item name="spambase" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -297,7 +273,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558098482061" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558361330810" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -306,19 +282,19 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\b92\Documents\Anchors\xai_examples\src\main\resources\spambase" />
+      <recent name="C:\Users\b92\Documents\Anchors\xai_examples\src\main\java\de\viadee\xai\xai_examples\spambase" />
+      <recent name="C:\Users\b92\Documents\Anchors\xai_examples\src\main\resources\creditg" />
+      <recent name="C:\Users\b92\Documents\Anchors\xai_examples\src\main\java\de\viadee\xai\xai_examples\creditg" />
+      <recent name="C:\Users\b92\Documents\Anchors\xai_examples\src\main\java\de\viadee\xai\xai_examples\churnOML" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\b92\Documents\Anchors\xai_examples\src\main\resources\spambase" />
+      <recent name="C:\Users\b92\Documents\Anchors\xai_examples\src\main\resources\creditg" />
       <recent name="C:\Users\b92\Documents\Anchors\xai_examples\src\main\resources\churnOML" />
       <recent name="C:\Users\b92\Documents\Anchors\xai_examples\src\main\resources\churnKaggle" />
       <recent name="C:\Users\b92\Documents\Anchors\xai_examples\src\main\resources\australian_credit" />
-      <recent name="C:\Users\b92\Documents\Anchors\xai_examples\src\main\resources\banking2" />
-      <recent name="C:\Users\GoT\Documents\git\xai_examples\src\main\resources" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\b92\Documents\Anchors\xai_examples\src\main\java\de\viadee\xai\xai_examples\churnOML" />
-      <recent name="C:\Users\b92\Documents\Anchors\xai_examples\src\main\java\de\viadee\xai\xai_examples\churnKaggle" />
-      <recent name="C:\Users\b92\Documents\Anchors\xai_examples\src\main\resources\churnKaggle" />
-      <recent name="C:\Users\b92\Documents\Anchors\xai_examples\src\main\java\de\viadee\xai\xai_examples\australian_credit" />
-      <recent name="C:\Users\b92\Documents\Anchors\xai_examples\src\main\resources\banking2" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -333,33 +309,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TitanicExplanation (1)">
-    <configuration name="AustralianExplanation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="de.viadee.xai.xai_examples.australian_credit.AustralianExplanation" />
-      <module name="xai_examples" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.viadee.xai.xai_examples.australian_credit.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Banking2Explanation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="de.viadee.xai.xai_examples.banking2.Banking2Explanation" />
-      <module name="xai_examples" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.viadee.xai.xai_examples.banking2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.SpambaseExplanation">
     <configuration name="ChurnKaggleExplanation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.viadee.xai.xai_examples.churnKaggle.ChurnKaggleExplanation" />
       <module name="xai_examples" />
@@ -386,6 +336,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CreditgExplanation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="de.viadee.xai.xai_examples.creditg.CreditgExplanation" />
+      <module name="xai_examples" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.viadee.xai.xai_examples.creditg.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpambaseExplanation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="de.viadee.xai.xai_examples.spambase.SpambaseExplanation" />
+      <module name="xai_examples" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.viadee.xai.xai_examples.spambase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TitanicExplanation (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.viadee.xai.xai_examples.titanic.TitanicExplanation" />
       <module name="xai_examples" />
@@ -401,11 +377,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TitanicExplanation (1)" />
+        <item itemvalue="Application.SpambaseExplanation" />
+        <item itemvalue="Application.CreditgExplanation" />
         <item itemvalue="Application.ChurnOMLExplanation" />
+        <item itemvalue="Application.TitanicExplanation (1)" />
         <item itemvalue="Application.ChurnKaggleExplanation" />
-        <item itemvalue="Application.Banking2Explanation" />
-        <item itemvalue="Application.AustralianExplanation" />
       </list>
     </recent_temporary>
   </component>
@@ -451,9 +427,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2510661" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25373134" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -487,6 +462,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
@@ -555,92 +533,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_202/src.zip!/java/util/stream/AbstractPipeline.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="259" selection-start-line="259" selection-end-line="259" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/de/viadee/xai/anchor/DefaultConfigsAdapter/1.0.1/DefaultConfigsAdapter-1.0.1-sources.jar!/de/viadee/xai/anchor/adapter/tabular/transformations/ReplaceEmptyTransformer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#630#631#0" expanded="true" />
-            <element signature="e#851#852#0" expanded="true" />
-            <element signature="e#901#902#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/de/viadee/xai/anchor/DefaultConfigsAdapter/1.0.1/DefaultConfigsAdapter-1.0.1-sources.jar!/de/viadee/xai/anchor/adapter/tabular/transformations/StringToNumberTransformer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/de/viadee/xai/anchor/DefaultConfigsAdapter/1.0.1/DefaultConfigsAdapter-1.0.1-sources.jar!/de/viadee/xai/anchor/adapter/tabular/transformations/StringToIntTransformer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#376#377#0" expanded="true" />
-            <element signature="e#436#437#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/de/viadee/xai/anchor/DefaultConfigsAdapter/1.0.1/DefaultConfigsAdapter-1.0.1-sources.jar!/de/viadee/xai/anchor/adapter/tabular/discretizer/DiscretizerRelation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/de/viadee/xai/anchor/DefaultConfigsAdapter/1.0.1/DefaultConfigsAdapter-1.0.1-sources.jar!/de/viadee/xai/anchor/adapter/tabular/discretizer/PercentileMedianDiscretizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/de/viadee/xai/anchor/DefaultConfigsAdapter/1.0.1/DefaultConfigsAdapter-1.0.1-sources.jar!/de/viadee/xai/anchor/adapter/tabular/column/IntegerColumn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="103" selection-start-line="103" selection-end-line="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/de/viadee/xai/anchor/DefaultConfigsAdapter/1.0.1/DefaultConfigsAdapter-1.0.1-sources.jar!/de/viadee/xai/anchor/adapter/tabular/discretizer/UniqueValueDiscretizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/de/viadee/xai/anchor/DefaultConfigsAdapter/1.0.1/DefaultConfigsAdapter-1.0.1-sources.jar!/de/viadee/xai/anchor/adapter/tabular/column/GenericColumn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/de/viadee/xai/anchor/DefaultConfigsAdapter/1.0.1/DefaultConfigsAdapter-1.0.1-sources.jar!/de/viadee/xai/anchor/adapter/tabular/column/NumberColumn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-csv/1.6/commons-csv-1.6-sources.jar!/org/apache/commons/csv/Token.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-csv/1.6/commons-csv-1.6-sources.jar!/org/apache/commons/csv/CSVRecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -796,13 +688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/australian_credit/AustralianDataset.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="86" column="74" selection-start-line="86" selection-start-column="74" selection-end-line="86" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/australian_credit/Australian_H2OModelWrapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
@@ -824,13 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/banking2/Banking2Dataset.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-697">
-          <caret line="28" column="72" selection-start-line="28" selection-start-column="72" selection-end-line="28" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/churnKaggle/test_churnKaggle.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -838,58 +716,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/titanic/H2OModelWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="49" column="8" lean-forward="true" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnKaggle/churnKaggle_H2OModelWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="55" column="80" selection-start-line="55" selection-start-column="80" selection-end-line="55" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/churnOML/test_churnOML.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="3" selection-start-column="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/titanic/TitanicDataset.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="39" column="55" lean-forward="true" selection-start-line="39" selection-start-column="55" selection-end-line="40" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnKaggle/ChurnKaggleDataset.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="44" column="87" lean-forward="true" selection-start-line="44" selection-start-column="87" selection-end-line="45" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnOML/churnOML_H2OModelWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="59" column="89" selection-start-line="59" selection-start-column="89" selection-end-line="59" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnOML/ChurnOMLDataset.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-338">
-          <caret line="90" column="43" selection-start-line="90" selection-start-column="43" selection-end-line="90" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -904,16 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/titanic/TitanicExplanation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="116" selection-start-line="83" selection-start-column="4" selection-end-line="116" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/churnOML/train_churnOML.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -921,38 +741,187 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnOML/ChurnOMLExplanation.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/banking2/Banking2Explanation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="114" column="5" lean-forward="true" selection-start-line="82" selection-start-column="4" selection-end-line="114" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnKaggle/ChurnKaggleExplanation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-646">
-          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+        <state relative-caret-position="748">
+          <caret line="111" column="5" selection-start-line="79" selection-start-column="4" selection-end-line="111" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/banking2/Banking2ModelWrapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="50" column="58" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="50" selection-end-column="58" />
+        <state relative-caret-position="553">
+          <caret line="50" column="58" selection-start-line="46" selection-start-column="7" selection-end-line="50" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/banking2/Banking2Explanation.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnKaggle/ChurnKaggleExplanation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="111" column="5" lean-forward="true" selection-start-line="79" selection-start-column="4" selection-end-line="111" selection-end-column="5" />
+        <state relative-caret-position="306">
+          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="51" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/titanic/TitanicExplanation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="51" column="29" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/creditg/test_creditg.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="3" selection-start-column="3" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/australian_credit/AustralianExplanation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
+        <state relative-caret-position="17">
+          <caret line="40" column="51" lean-forward="true" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/australian_credit/AustralianDataset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="86" column="74" selection-start-line="86" selection-start-column="74" selection-end-line="86" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnKaggle/ChurnKaggleDataset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="44" column="87" lean-forward="true" selection-start-line="44" selection-start-column="87" selection-end-line="45" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnOML/ChurnOMLDataset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="90" column="43" selection-start-line="90" selection-start-column="43" selection-end-line="90" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnOML/ChurnOMLExplanation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="54" column="42" lean-forward="true" selection-start-line="54" selection-start-column="42" selection-end-line="54" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/banking2/Banking2Dataset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="37" column="14" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/creditg/train_creditg.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="24" column="176" lean-forward="true" selection-start-line="24" selection-start-column="176" selection-end-line="24" selection-end-column="176" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/titanic/TitanicDataset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="50" column="59" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/titanic/H2OModelWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="49" column="8" lean-forward="true" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/ai/h2o/h2o-genmodel/3.22.1.4/h2o-genmodel-3.22.1.4-sources.jar!/hex/genmodel/MojoReaderBackendFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spambase/train_spambase.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="3" selection-start-column="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/creditg/CreditgDataset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="94" column="63" lean-forward="true" selection-start-line="72" selection-start-column="40" selection-end-line="94" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnOML/churnOML_H2OModelWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="59" column="89" selection-start-line="59" selection-start-column="89" selection-end-line="59" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/churnKaggle/churnKaggle_H2OModelWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="55" column="80" selection-start-line="55" selection-start-column="80" selection-end-line="55" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/creditg/CreditgExplanation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="46" column="48" lean-forward="true" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/creditg/Creditg_H2OModelWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="46" column="84" lean-forward="true" selection-start-line="46" selection-start-column="84" selection-end-line="47" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spambase/test_spambase.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/spambase/SpambaseDataset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="46" column="88" lean-forward="true" selection-start-line="46" selection-start-column="88" selection-end-line="47" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/spambase/SpambaseExplanation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="53" column="3" selection-start-line="53" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/viadee/xai/xai_examples/spambase/Spambase_H2OModelWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-389">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
