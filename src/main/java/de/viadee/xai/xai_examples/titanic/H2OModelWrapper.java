@@ -27,7 +27,7 @@ class H2OModelWrapper {
      * @throws IOException if an error occurs
      */
     H2OModelWrapper() throws IOException {
-        final URL zipURL = ClassLoader.getSystemResource("h2oModel.zip");
+        final URL zipURL = ClassLoader.getSystemResource("titanic/h2oModel.zip");
         final MojoReaderBackend reader = MojoReaderBackendFactory.createReaderBackend(zipURL,
                 MojoReaderBackendFactory.CachingStrategy.MEMORY);
         final MojoModel mojoModel = ModelMojoReader.readFrom(reader);
