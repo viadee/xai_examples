@@ -1,6 +1,7 @@
 package de.viadee.xai.xai_examples.australian_credit;
 
 import de.viadee.xai.anchor.adapter.tabular.AnchorTabular;
+import de.viadee.xai.anchor.adapter.tabular.builder.AnchorTabularBuilderSequential;
 import de.viadee.xai.anchor.adapter.tabular.column.DoubleColumn;
 import de.viadee.xai.anchor.adapter.tabular.column.IntegerColumn;
 import de.viadee.xai.anchor.adapter.tabular.column.StringColumn;
@@ -31,7 +32,7 @@ class AustralianDataset {
             throw new RuntimeException("Could not load data");
 
         try {
-            return new AnchorTabular.Builder()
+            return new AnchorTabularBuilderSequential()
                     .setDoBalance(false)
                     .addIgnoredColumn("Id")
                     .addColumn(IntegerColumn.fromStringInput("A1"))
@@ -67,7 +68,7 @@ class AustralianDataset {
             throw new RuntimeException("Could not load data");
 
         try {
-            return new AnchorTabular.Builder()
+            return new AnchorTabularBuilderSequential()
                     .setDoBalance(false)
                     .addIgnoredColumn("Id")
                     .addColumn(IntegerColumn.fromStringInput("A1"))

@@ -1,6 +1,7 @@
 package de.viadee.xai.xai_examples.churnKaggle;
 
 import de.viadee.xai.anchor.adapter.tabular.AnchorTabular;
+import de.viadee.xai.anchor.adapter.tabular.builder.AnchorTabularBuilderSequential;
 import de.viadee.xai.anchor.adapter.tabular.column.DoubleColumn;
 import de.viadee.xai.anchor.adapter.tabular.column.IntegerColumn;
 import de.viadee.xai.anchor.adapter.tabular.column.StringColumn;
@@ -27,7 +28,7 @@ class ChurnKaggleDataset {
             throw new RuntimeException("Could not load data");
 
         try {
-            return new AnchorTabular.Builder()
+            return new AnchorTabularBuilderSequential()
                     .setDoBalance(false)
                     .addIgnoredColumn("Id")
                     .addIgnoredColumn("RowNumber")
@@ -62,7 +63,7 @@ class ChurnKaggleDataset {
             throw new RuntimeException("Could not load data");
 
         try {
-            return new AnchorTabular.Builder()
+            return new AnchorTabularBuilderSequential()
                     .setDoBalance(false)
                     .addIgnoredColumn("Id")
                     .addIgnoredColumn("RowNumber")
