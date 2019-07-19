@@ -1,6 +1,7 @@
 package de.viadee.xai.xai_examples.titanic;
 
 import de.viadee.xai.anchor.adapter.tabular.AnchorTabular;
+import de.viadee.xai.anchor.adapter.tabular.builder.AnchorTabularBuilderSequential;
 import de.viadee.xai.anchor.adapter.tabular.column.DoubleColumn;
 import de.viadee.xai.anchor.adapter.tabular.column.IntegerColumn;
 import de.viadee.xai.anchor.adapter.tabular.column.StringColumn;
@@ -26,12 +27,12 @@ class TitanicDataset {
      * @return the {@link AnchorTabular} object that contains the training data and its definitions
      */
     static AnchorTabular createTabularTrainingDefinition() {
-        InputStream trainingDataStream = ClassLoader.getSystemResourceAsStream("train.csv");
+        InputStream trainingDataStream = ClassLoader.getSystemResourceAsStream("titanic/train.csv");
         if (trainingDataStream == null)
             throw new RuntimeException("Could not load data");
 
         try {
-            return new AnchorTabular.Builder()
+            return new AnchorTabularBuilderSequential()
                     .setDoBalance(false)
                     .addIgnoredColumn("PassengerId")
                     .addTargetColumn(IntegerColumn.fromStringInput("Survived"))
@@ -62,12 +63,12 @@ class TitanicDataset {
         // The following implementation is very much similar to the above method.
         // It is contained in an own block to increase the tutorial's readability
         // Main difference: no target label is included in test set data
-        InputStream trainingDataStream = ClassLoader.getSystemResourceAsStream("test.csv");
+        InputStream trainingDataStream = ClassLoader.getSystemResourceAsStream("titanic/test.csv");
         if (trainingDataStream == null)
             throw new RuntimeException("Could not load data");
 
         try {
-            return new AnchorTabular.Builder()
+            return new AnchorTabularBuilderSequential()
                     .setDoBalance(false)
                     .addIgnoredColumn("PassengerId")
                     // Label is not specified in test data, so we need to skip it
@@ -106,7 +107,7 @@ class TitanicDataset {
      * @return the labels of the test set as specified in gender_submission.
      */
     static int[] readTestLabels() {
-        InputStream trainingDataStream = ClassLoader.getSystemResourceAsStream("gender_submission.csv");
+        InputStream trainingDataStream = ClassLoader.getSystemResourceAsStream("titanic/gender_submission.csv");
         if (trainingDataStream == null)
             throw new RuntimeException("Could not load data");
 
