@@ -32,7 +32,7 @@ public class TitanicExplanation {
         // Our first model to be explained (GBM). Imported from an H2O model pre-built and trained in R
         final H2OModelWrapper h2oModel = new H2OModelWrapper();
         // Obtain a second suitable model (RandomForest). Train it ourselves this time.
-        final TabularRandomForestClassifier randomForestModel = new TabularRandomForestClassifier(100);
+        final TabularRandomForestClassifier randomForestModel = new TabularRandomForestClassifier(100, true);
         randomForestModel.fit(anchorTabular.getTabularInstances());
 
         // Print the model's test data accuracy

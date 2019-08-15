@@ -48,7 +48,7 @@ class TitanicDataset {
                     .addColumn(new StringColumn("Cabin", Arrays.asList(
                             new ReplaceNonEmptyTransformer(true),
                             new ReplaceEmptyTransformer(false)),
-                            null, null))
+                            null))
                     .addColumn(new StringColumn("Embarked"))
                     .build(trainingDataStream, true, false);
         } catch (IOException e) {
@@ -84,7 +84,7 @@ class TitanicDataset {
                     .addColumn(new StringColumn("Cabin", Arrays.asList(
                             new ReplaceNonEmptyTransformer(true),
                             new ReplaceEmptyTransformer(false)),
-                            null, null))
+                            null))
                     .addColumn(new StringColumn("Embarked"))
                     .build(trainingDataStream, true, false);
         } catch (IOException e) {

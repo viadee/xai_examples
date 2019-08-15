@@ -114,6 +114,87 @@ extended as required.
 It even is possibly to refrain from using this extension altogether and implement a custom solution based directly on 
 the base library.
 
+The anchorAdapters will conclude this phase by logging all discretization changes it made to the dataset. This helps monitoring the discretization, finding mistakes and looks like follows in this example's case:
+
+    DEBUG [2019-07-26 15:48:28.112][main][de.viadee.xai.anchor.adapter.tabular.builder.TabularPreprocessor] Discretization for column [Pclass] is configured as follows:
+        [1] --> 2
+        [2] --> 1
+        [3] --> 0
+    DEBUG [2019-07-26 15:48:28.113][main][de.viadee.xai.anchor.adapter.tabular.builder.TabularPreprocessor] Discretization for column [Name] is configured as follows:
+        [Ware, Mrs. John James (Florence Louise Long)] --> 362
+        [Cotterill, Mr. Henry Harry""] --> 377
+        [Olsson, Mr. Oscar Wilhelm] --> 300
+        [Buckley, Mr. Daniel] --> 106
+        [Buckley, Miss. Katherine] --> 113
+        [Riordan, Miss. Johanna Hannah""] --> 408
+        [Pallas y Castello, Mr. Emilio] --> 369
+        [Karnes, Mrs. J Frank (Claire Bennett)] --> 246
+        [Payne, Mr. Vivian Ponsonby] --> 390
+        [Palsson, Master. Paul Folke] --> 389
+        [Denbury, Mr. Herbert] --> 338
+        [Makinen, Mr. Kalle Edvard] --> 97
+        [Davies, Mr. John Samuel] --> 9
+        [Chronopoulos, Mr. Demetrios] --> 115
+        [Dodge, Mrs. Washington (Ruth Vidaver)] --> 374
+        ... (and 403 more elements)
+    DEBUG [2019-07-26 15:48:28.114][main][de.viadee.xai.anchor.adapter.tabular.builder.TabularPreprocessor] Discretization for column [Sex] is configured as follows:
+        [female] --> 1
+        [male] --> 0
+    DEBUG [2019-07-26 15:48:28.116][main][de.viadee.xai.anchor.adapter.tabular.builder.TabularPreprocessor] Discretization for column [Age] is configured as follows:
+        ]-1, -1) --> -1
+        [0.17, 21) --> 17
+        [22, 27) --> 24
+        [28, 39) --> 32
+        [40, 76[ --> 48
+    DEBUG [2019-07-26 15:48:28.116][main][de.viadee.xai.anchor.adapter.tabular.builder.TabularPreprocessor] Discretization for column [SibSp] is configured as follows:
+        [0] --> 0
+        [1] --> 1
+        [2] --> 2
+        [3] --> 3
+        [4] --> 4
+        [5] --> 5
+        [8] --> 6
+    DEBUG [2019-07-26 15:48:28.116][main][de.viadee.xai.anchor.adapter.tabular.builder.TabularPreprocessor] Discretization for column [Parch] is configured as follows:
+        [0] --> 0
+        [1] --> 1
+        [2] --> 3
+        [3] --> 2
+        [4] --> 4
+        [5] --> 6
+        [6] --> 5
+        [9] --> 7
+    DEBUG [2019-07-26 15:48:28.118][main][de.viadee.xai.anchor.adapter.tabular.builder.TabularPreprocessor] Discretization for column [Ticket] is configured as follows:
+        [24065] --> 13
+        [11778] --> 96
+        [2] --> 173
+        [23101284] --> 230
+        [233478] --> 168
+        [23101291] --> 45
+        [3085] --> 30
+        [9232] --> 193
+        [349202] --> 267
+        [349211] --> 68
+        [14879] --> 198
+        [2079] --> 320
+        [349220] --> 10
+        [11813] --> 48
+        [4133] --> 126
+        ... (and 347 more elements)
+    DEBUG [2019-07-26 15:48:28.120][main][de.viadee.xai.anchor.adapter.tabular.builder.TabularPreprocessor] Discretization for column [Fare] is configured as follows:
+        ]-1, 7.75) --> 7.27
+        [7.78, 8.67) --> 7.9
+        [8.72, 14.46) --> 12.55
+        [14.46, 26) --> 21
+        [26.55, 56.5) --> 31.5
+        [57.75, 512.33[ --> 83.16
+    DEBUG [2019-07-26 15:48:28.120][main][de.viadee.xai.anchor.adapter.tabular.builder.TabularPreprocessor] Discretization for column [Cabin] is configured as follows:
+        [false] --> 0
+        [true] --> 1
+    DEBUG [2019-07-26 15:48:28.121][main][de.viadee.xai.anchor.adapter.tabular.builder.TabularPreprocessor] Discretization for column [Embarked] is configured as follows:
+        [Q] --> 0
+        [S] --> 1
+        [C] --> 2
+
 ### 3. Obtaining the Model
 Anchors is a <span style="background-color: #FFFF00">Model-Agnostic</span> explanation algorithm and can describe 
 <b>any</b> classification model. Hence, its presence is implicitly assumed when creating explanations. 
