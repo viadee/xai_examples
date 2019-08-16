@@ -30,7 +30,7 @@ public class Banking2Explanation {
         // Our first model to be explained (GBM). Imported from an H2O model pre-built and trained in R
         final Banking2ModelWrapper h2oModel = new Banking2ModelWrapper();
         // Obtain a second suitable model (RandomForest). Train it ourselves this time.
-        final TabularRandomForestClassifier randomForestModel = new TabularRandomForestClassifier(100);
+        final TabularRandomForestClassifier randomForestModel = new TabularRandomForestClassifier(100, false);
         randomForestModel.fit(anchorTabular.getTabularInstances());
 
         // Print the model's test data accuracy

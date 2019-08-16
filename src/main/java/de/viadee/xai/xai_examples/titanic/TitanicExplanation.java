@@ -42,8 +42,6 @@ public class TitanicExplanation {
         // Pick instance to be explained
         // Next pick specific instance (countess or patrick dooley)
         final TabularInstance explainedInstance = anchorTabular.getTabularInstances()[759];
-        //final TabularInstance explainedInstance = anchorTabular.getTabularInstances()[890];
-
 
         // Create builder that can be used to create an AnchorConstruction instance
         // H2O default builder

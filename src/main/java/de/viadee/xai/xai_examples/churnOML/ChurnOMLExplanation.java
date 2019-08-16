@@ -33,12 +33,12 @@ public class ChurnOMLExplanation {
         // Our first model to be explained (GBM). Imported from an H2O model pre-built and trained in R
         final churnOML_H2OModelWrapper h2oModel = new churnOML_H2OModelWrapper();
         // Obtain a second suitable model (RandomForest). Train it ourselves this time.
-//         final TabularRandomForestClassifier randomForestModel = new TabularRandomForestClassifier(100);
-//         randomForestModel.fit(anchorTabular.getTabularInstances());
+         final TabularRandomForestClassifier randomForestModel = new TabularRandomForestClassifier(100, true);
+         randomForestModel.fit(anchorTabular.getTabularInstances());
 
         // Print the model's test data accuracy
         outputTestsetAccuracy("H2OModel", h2oModel::predict);
-//        outputTestsetAccuracy("RandomForest", randomForestModel);
+        outputTestsetAccuracy("RandomForest", randomForestModel);
 
         // Pick instance to be explained
         // Next pick specific instance (countess or patrick dooley)
@@ -50,21 +50,21 @@ public class ChurnOMLExplanation {
                 .createDefaultBuilder(h2oModel::predict, explainedInstance);
         h2oBuilder.setTau(0.95).setBeamSize(7);
         // RandomForest default builder
-//        final AnchorConstructionBuilder<TabularInstance> randomForestBuilder = anchorTabular
-//                .createDefaultBuilder(randomForestModel, explainedInstance);
-//        randomForestBuilder.setTau(0.5);
+        final AnchorConstructionBuilder<TabularInstance> randomForestBuilder = anchorTabular
+                .createDefaultBuilder(randomForestModel, explainedInstance);
+        randomForestBuilder.setTau(0.5);
 
         // Create local explanations
         System.out.println("====H2O Local Explanation====");
         printLocalExplanationResult(explainedInstance, anchorTabular, h2oBuilder);
-//        System.out.println("====Random Forest Local Explanation====");
-//        printLocalExplanationResult(explainedInstance, anchorTabular, randomForestBuilder);
+        System.out.println("====Random Forest Local Explanation====");
+        printLocalExplanationResult(explainedInstance, anchorTabular, randomForestBuilder);
 
         // Create global explanations
         System.out.println("====H2O Global Explanation====");
         printGlobalExplanationResult(anchorTabular, h2oBuilder, true);
-//        System.out.println("====Random Forest Global Explanation====");
-//        printGlobalExplanationResult(anchorTabular, randomForestBuilder, false);
+        System.out.println("====Random Forest Global Explanation====");
+        printGlobalExplanationResult(anchorTabular, randomForestBuilder, false);
     }
 
     private static void printLocalExplanationResult(TabularInstance instance, AnchorTabular tabular,

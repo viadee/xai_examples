@@ -107,7 +107,7 @@ class AustralianDataset {
      * @return the labels of the test set as specified in gender_submission.
      */
     static int[] readTestLabels() {
-        InputStream trainingDataStream = ClassLoader.getSystemResourceAsStream("gender_submission.csv");
+        InputStream trainingDataStream = ClassLoader.getSystemResourceAsStream("./australian_credit/test_australianCredit.csv");
         if (trainingDataStream == null)
             throw new RuntimeException("Could not load data");
 

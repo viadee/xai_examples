@@ -30,7 +30,7 @@ public class AustralianExplanation {
         // Our first model to be explained (GBM). Imported from an H2O model pre-built and trained in R
         final Australian_H2OModelWrapper h2oModel = new Australian_H2OModelWrapper();
         // Obtain a second suitable model (RandomForest). Train it ourselves this time.
-        final TabularRandomForestClassifier randomForestModel = new TabularRandomForestClassifier(100);
+        final TabularRandomForestClassifier randomForestModel = new TabularRandomForestClassifier(100, false);
         randomForestModel.fit(anchorTabular.getTabularInstances());
 
         // Print the model's test data accuracy
@@ -40,7 +40,6 @@ public class AustralianExplanation {
         // Pick instance to be explained
         // Next pick specific instance (countess or patrick dooley)
         final TabularInstance explainedInstance = anchorTabular.getTabularInstances()[111];
-
 
         // Create builder that can be used to create an AnchorConstruction instance
         // H2O default builder
