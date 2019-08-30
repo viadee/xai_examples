@@ -50,6 +50,13 @@
             <version>1.0.1</version>
         </dependency>
 
+        <!-- Discretization -->
+        <dependency>
+            <groupId>de.viadee</groupId>
+            <artifactId>discretizer4j</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/ai.h2o/h2o-genmodel -->
         <dependency>
             <groupId>ai.h2o</groupId>

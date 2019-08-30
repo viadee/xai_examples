@@ -6,7 +6,7 @@ import de.viadee.xai.anchor.adapter.tabular.column.BooleanColumn;
 import de.viadee.xai.anchor.adapter.tabular.column.DoubleColumn;
 import de.viadee.xai.anchor.adapter.tabular.column.IntegerColumn;
 import de.viadee.xai.anchor.adapter.tabular.column.StringColumn;
-import de.viadee.xai.anchor.adapter.tabular.discretizer.ManualDiscretizer;
+import de.viadee.xai.anchor.adapter.tabular.discretizer.impl.ManualDiscretizer;
 
 import java.io.IOException;
 

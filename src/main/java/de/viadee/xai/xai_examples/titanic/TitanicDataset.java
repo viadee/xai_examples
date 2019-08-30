@@ -5,6 +5,8 @@ import de.viadee.xai.anchor.adapter.tabular.builder.AnchorTabularBuilderSequenti
 import de.viadee.xai.anchor.adapter.tabular.column.DoubleColumn;
 import de.viadee.xai.anchor.adapter.tabular.column.IntegerColumn;
 import de.viadee.xai.anchor.adapter.tabular.column.StringColumn;
+import de.viadee.discretizers4j.*;
+import de.viadee.discretizers4j.impl.*;
 import de.viadee.xai.anchor.adapter.tabular.transformations.ReplaceEmptyTransformer;
 import de.viadee.xai.anchor.adapter.tabular.transformations.ReplaceNonEmptyTransformer;
 import de.viadee.xai.anchor.adapter.tabular.transformations.Transformer;
@@ -17,11 +19,14 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.function.Supplier;
 
 /**
  * Loads the dataset and its definitions and prepares the {@link AnchorTabular} object
  */
 class TitanicDataset {
+
+    static final Supplier<Discretizer> discretizerSupplier = () -> new PercentileMedianDiscretizer(3);
 
     /**
      * @return the {@link AnchorTabular} object that contains the training data and its definitions
@@ -39,12 +44,12 @@ class TitanicDataset {
                     .addColumn(IntegerColumn.fromStringInput("Pclass"))
                     .addColumn(new StringColumn("Name"))
                     .addColumn(new StringColumn("Sex"))
-                    .addColumn(DoubleColumn.fromStringInput("Age", -1, 5))
+                    .addColumn(DoubleColumn.fromStringInput("Age", -1, discretizerSupplier.get()))
                     .addColumn(IntegerColumn.fromStringInput("SibSp"))
                     .addColumn(IntegerColumn.fromStringInput("Parch"))
                     .addColumn(IntegerColumn.fromStringInput("Ticket", -1,
                             Collections.singletonList(new TicketNumberTransformer()), null))
-                    .addColumn(DoubleColumn.fromStringInput("Fare", -1, 6))
+                    .addColumn(DoubleColumn.fromStringInput("Fare", -1, discretizerSupplier.get()))
                     .addColumn(new StringColumn("Cabin", Arrays.asList(
                             new ReplaceNonEmptyTransformer(true),
                             new ReplaceEmptyTransformer(false)),
@@ -71,16 +76,17 @@ class TitanicDataset {
             return new AnchorTabularBuilderSequential()
                     .setDoBalance(false)
                     .addIgnoredColumn("PassengerId")
+                    .addTargetColumn(IntegerColumn.fromStringInput("Survived"))
                     // Label is not specified in test data, so we need to skip it
                     .addColumn(IntegerColumn.fromStringInput("Pclass"))
                     .addColumn(new StringColumn("Name"))
                     .addColumn(new StringColumn("Sex"))
-                    .addColumn(DoubleColumn.fromStringInput("Age", -1, 5))
+                    .addColumn(DoubleColumn.fromStringInput("Age", -1, discretizerSupplier.get()))
                     .addColumn(IntegerColumn.fromStringInput("SibSp"))
                     .addColumn(IntegerColumn.fromStringInput("Parch"))
                     .addColumn(IntegerColumn.fromStringInput("Ticket", -1,
                             Collections.singletonList(new TicketNumberTransformer()), null))
-                    .addColumn(DoubleColumn.fromStringInput("Fare", -1, 6))
+                    .addColumn(DoubleColumn.fromStringInput("Fare", -1, discretizerSupplier.get()))
                     .addColumn(new StringColumn("Cabin", Arrays.asList(
                             new ReplaceNonEmptyTransformer(true),
                             new ReplaceEmptyTransformer(false)),
