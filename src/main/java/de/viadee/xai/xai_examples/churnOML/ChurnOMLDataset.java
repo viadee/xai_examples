@@ -1,10 +1,13 @@
 package de.viadee.xai.xai_examples.churnOML;
 
+
+import de.viadee.discretizers4j.Discretizer;
+import de.viadee.discretizers4j.impl.*;
+
 import de.viadee.xai.anchor.adapter.tabular.AnchorTabular;
 import de.viadee.xai.anchor.adapter.tabular.builder.AnchorTabularBuilderSequential;
 import de.viadee.xai.anchor.adapter.tabular.column.DoubleColumn;
 import de.viadee.xai.anchor.adapter.tabular.column.IntegerColumn;
-import de.viadee.xai.anchor.adapter.tabular.column.StringColumn;
 import de.viadee.xai.anchor.adapter.tabular.transformations.Transformer;
 import de.viadee.xai.anchor.adapter.tabular.util.CSVReader;
 
@@ -13,11 +16,14 @@ import java.io.InputStream;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.function.Supplier;
 
 /**
  * Loads the dataset and its definitions and prepares the {@link AnchorTabular} object
  */
 class ChurnOMLDataset {
+
+    static final Supplier<Discretizer> discretizerSupplier = () -> new PercentileMedianDiscretizer(5);
 
     /**
      * @return the {@link AnchorTabular} object that contains the training data and its definitions
@@ -37,19 +43,19 @@ class ChurnOMLDataset {
                     .addIgnoredColumn("phone_number")
                     .addColumn(IntegerColumn.fromStringInput("international_plan"))
                     .addColumn(IntegerColumn.fromStringInput("voice_mail_plan"))
-                    .addColumn(IntegerColumn.fromStringInput("number_vmail_messages", -1, 5))
-                    .addColumn(DoubleColumn.fromStringInput("total_day_minutes", -1, 5))
-                    .addColumn(IntegerColumn.fromStringInput("total_day_calls", -1, 5))
-                    .addColumn(DoubleColumn.fromStringInput("total_day_charge", -1, 5))
-                    .addColumn(DoubleColumn.fromStringInput("total_eve_minutes", -1, 5))
-                    .addColumn(IntegerColumn.fromStringInput("total_eve_calls", -1, 5))
-                    .addColumn(DoubleColumn.fromStringInput("total_eve_charge", -1, 5))
-                    .addColumn(DoubleColumn.fromStringInput("total_night_minutes", -1, 5))
-                    .addColumn(IntegerColumn.fromStringInput("total_night_calls", -1, 5))
-                    .addColumn(DoubleColumn.fromStringInput("total_night_charge", -1, 5))
-                    .addColumn(DoubleColumn.fromStringInput("total_intl_minutes", -1, 5))
-                    .addColumn(IntegerColumn.fromStringInput("total_intl_calls", -1, 5))
-                    .addColumn(DoubleColumn.fromStringInput("total_intl_charge", -1, 5))
+                    .addColumn(IntegerColumn.fromStringInput("number_vmail_messages", -1, null, discretizerSupplier.get()))
+                    .addColumn(DoubleColumn.fromStringInput("total_day_minutes", -1, discretizerSupplier.get()))
+                    .addColumn(IntegerColumn.fromStringInput("total_day_calls", -1, null, discretizerSupplier.get()))
+                    .addColumn(DoubleColumn.fromStringInput("total_day_charge", -1, discretizerSupplier.get()))
+                    .addColumn(DoubleColumn.fromStringInput("total_eve_minutes", -1, discretizerSupplier.get()))
+                    .addColumn(IntegerColumn.fromStringInput("total_eve_calls", -1, null, discretizerSupplier.get()))
+                    .addColumn(DoubleColumn.fromStringInput("total_eve_charge", -1, discretizerSupplier.get()))
+                    .addColumn(DoubleColumn.fromStringInput("total_night_minutes", -1, discretizerSupplier.get()))
+                    .addColumn(IntegerColumn.fromStringInput("total_night_calls", -1, null, discretizerSupplier.get()))
+                    .addColumn(DoubleColumn.fromStringInput("total_night_charge", -1, discretizerSupplier.get()))
+                    .addColumn(DoubleColumn.fromStringInput("total_intl_minutes", -1, discretizerSupplier.get()))
+                    .addColumn(IntegerColumn.fromStringInput("total_intl_calls", -1, null, discretizerSupplier.get()))
+                    .addColumn(DoubleColumn.fromStringInput("total_intl_charge", -1, discretizerSupplier.get()))
                     .addColumn(IntegerColumn.fromStringInput("number_customer_service_calls"))
                     .addTargetColumn(IntegerColumn.fromStringInput("class"))
                     .build(trainingDataStream, true, false);
@@ -79,19 +85,19 @@ class ChurnOMLDataset {
                     .addIgnoredColumn("phone_number")
                     .addColumn(IntegerColumn.fromStringInput("international_plan"))
                     .addColumn(IntegerColumn.fromStringInput("voice_mail_plan"))
-                    .addColumn(IntegerColumn.fromStringInput("number_vmail_messages", -1, 5))
-                    .addColumn(DoubleColumn.fromStringInput("total_day_minutes", -1, 5))
-                    .addColumn(IntegerColumn.fromStringInput("total_day_calls", -1, 5))
-                    .addColumn(DoubleColumn.fromStringInput("total_day_charge", -1, 5))
-                    .addColumn(DoubleColumn.fromStringInput("total_eve_minutes", -1, 5))
-                    .addColumn(IntegerColumn.fromStringInput("total_eve_calls", -1, 5))
-                    .addColumn(DoubleColumn.fromStringInput("total_eve_charge", -1, 5))
-                    .addColumn(DoubleColumn.fromStringInput("total_night_minutes", -1, 5))
-                    .addColumn(IntegerColumn.fromStringInput("total_night_calls", -1, 5))
-                    .addColumn(DoubleColumn.fromStringInput("total_night_charge", -1, 5))
-                    .addColumn(DoubleColumn.fromStringInput("total_intl_minutes", -1, 5))
-                    .addColumn(IntegerColumn.fromStringInput("total_intl_calls", -1, 5))
-                    .addColumn(DoubleColumn.fromStringInput("total_intl_charge", -1, 5))
+                    .addColumn(IntegerColumn.fromStringInput("number_vmail_messages", -1, null, discretizerSupplier.get()))
+                    .addColumn(DoubleColumn.fromStringInput("total_day_minutes", -1,  discretizerSupplier.get()))
+                    .addColumn(IntegerColumn.fromStringInput("total_day_calls", -1, null, discretizerSupplier.get()))
+                    .addColumn(DoubleColumn.fromStringInput("total_day_charge", -1,  discretizerSupplier.get()))
+                    .addColumn(DoubleColumn.fromStringInput("total_eve_minutes", -1,  discretizerSupplier.get()))
+                    .addColumn(IntegerColumn.fromStringInput("total_eve_calls", -1, null, discretizerSupplier.get()))
+                    .addColumn(DoubleColumn.fromStringInput("total_eve_charge", -1,  discretizerSupplier.get()))
+                    .addColumn(DoubleColumn.fromStringInput("total_night_minutes", -1,  discretizerSupplier.get()))
+                    .addColumn(IntegerColumn.fromStringInput("total_night_calls", -1, null, discretizerSupplier.get()))
+                    .addColumn(DoubleColumn.fromStringInput("total_night_charge", -1,  discretizerSupplier.get()))
+                    .addColumn(DoubleColumn.fromStringInput("total_intl_minutes", -1,  discretizerSupplier.get()))
+                    .addColumn(IntegerColumn.fromStringInput("total_intl_calls", -1, null, discretizerSupplier.get()))
+                    .addColumn(DoubleColumn.fromStringInput("total_intl_charge", -1,  discretizerSupplier.get()))
                     .addColumn(IntegerColumn.fromStringInput("number_customer_service_calls"))
                     .addTargetColumn(IntegerColumn.fromStringInput("class"))
                     .build(trainingDataStream, true, false);

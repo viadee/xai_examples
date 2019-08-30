@@ -2,20 +2,15 @@ package de.viadee.xai.xai_examples.banking2;
 
 import de.viadee.xai.anchor.adapter.tabular.AnchorTabular;
 import de.viadee.xai.anchor.adapter.tabular.builder.AnchorTabularBuilderSequential;
-import de.viadee.xai.anchor.adapter.tabular.column.DoubleColumn;
 import de.viadee.xai.anchor.adapter.tabular.column.IntegerColumn;
 import de.viadee.xai.anchor.adapter.tabular.column.StringColumn;
-import de.viadee.xai.anchor.adapter.tabular.transformations.ReplaceEmptyTransformer;
-import de.viadee.xai.anchor.adapter.tabular.transformations.ReplaceNonEmptyTransformer;
 import de.viadee.xai.anchor.adapter.tabular.transformations.Transformer;
 import de.viadee.xai.anchor.adapter.tabular.util.CSVReader;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Iterator;
 
 /**
@@ -96,17 +91,6 @@ class Banking2Dataset {
         }
     }
 
-    private static final class TicketNumberTransformer implements Transformer {
-
-        @Override
-        public Serializable apply(Serializable serializable) {
-            // Transforms the ticket column to contain only the ticket number without ticket prefixes
-            String replaced = ((String) serializable).replaceAll("[^\\d]+", "");
-
-            return ("".equals(replaced)) ? -1 : replaced;
-        }
-    }
-
     /**
      * @return the labels of the test set as specified in gender_submission.
      */
@@ -130,5 +114,16 @@ class Banking2Dataset {
         }
 
 
+    }
+
+    private static final class TicketNumberTransformer implements Transformer {
+
+        @Override
+        public Serializable apply(Serializable serializable) {
+            // Transforms the ticket column to contain only the ticket number without ticket prefixes
+            String replaced = ((String) serializable).replaceAll("[^\\d]+", "");
+
+            return ("".equals(replaced)) ? -1 : replaced;
+        }
     }
 }

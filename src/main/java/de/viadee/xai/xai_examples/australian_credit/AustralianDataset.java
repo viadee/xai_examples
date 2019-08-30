@@ -1,27 +1,26 @@
 package de.viadee.xai.xai_examples.australian_credit;
 
+import de.viadee.discretizers4j.Discretizer;
+import de.viadee.discretizers4j.impl.*;
 import de.viadee.xai.anchor.adapter.tabular.AnchorTabular;
 import de.viadee.xai.anchor.adapter.tabular.builder.AnchorTabularBuilderSequential;
-import de.viadee.xai.anchor.adapter.tabular.column.DoubleColumn;
 import de.viadee.xai.anchor.adapter.tabular.column.IntegerColumn;
-import de.viadee.xai.anchor.adapter.tabular.column.StringColumn;
-import de.viadee.xai.anchor.adapter.tabular.transformations.ReplaceEmptyTransformer;
-import de.viadee.xai.anchor.adapter.tabular.transformations.ReplaceNonEmptyTransformer;
 import de.viadee.xai.anchor.adapter.tabular.transformations.Transformer;
 import de.viadee.xai.anchor.adapter.tabular.util.CSVReader;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Iterator;
+import java.util.function.Supplier;
 
 /**
  * Loads the dataset and its definitions and prepares the {@link AnchorTabular} object
  */
 class AustralianDataset {
+
+    static final Supplier<Discretizer> discretizerSupplier = () -> new UniqueValueDiscretizer();
 
     /**
      * @return the {@link AnchorTabular} object that contains the training data and its definitions
@@ -31,24 +30,25 @@ class AustralianDataset {
         if (trainingDataStream == null)
             throw new RuntimeException("Could not load data");
 
+
         try {
             return new AnchorTabularBuilderSequential()
                     .setDoBalance(false)
                     .addIgnoredColumn("Id")
                     .addColumn(IntegerColumn.fromStringInput("A1"))
-                    .addColumn(IntegerColumn.fromStringInput("A2", -1, 5))
-                    .addColumn(IntegerColumn.fromStringInput("A3", -1, 5))
+                    .addColumn(IntegerColumn.fromStringInput("A2", -1, null, discretizerSupplier.get()))
+                    .addColumn(IntegerColumn.fromStringInput("A3", -1, null, discretizerSupplier.get()))
                     .addColumn(IntegerColumn.fromStringInput("A4"))
                     .addColumn(IntegerColumn.fromStringInput("A5"))
                     .addColumn(IntegerColumn.fromStringInput("A6"))
-                    .addColumn(IntegerColumn.fromStringInput("A7", -1, 5))
+                    .addColumn(IntegerColumn.fromStringInput("A7", -1, null, discretizerSupplier.get()))
                     .addColumn(IntegerColumn.fromStringInput("A8"))
                     .addColumn(IntegerColumn.fromStringInput("A9"))
-                    .addColumn(IntegerColumn.fromStringInput("A10", -1, 5))
+                    .addColumn(IntegerColumn.fromStringInput("A10", -1, null, discretizerSupplier.get()))
                     .addColumn(IntegerColumn.fromStringInput("A11"))
                     .addColumn(IntegerColumn.fromStringInput("A12"))
-                    .addColumn(IntegerColumn.fromStringInput("A13", -1, 5))
-                    .addColumn(IntegerColumn.fromStringInput("A14", -1, 5))
+                    .addColumn(IntegerColumn.fromStringInput("A13", -1, null, discretizerSupplier.get()))
+                    .addColumn(IntegerColumn.fromStringInput("A14", -1, null, discretizerSupplier.get()))
                     .addTargetColumn(IntegerColumn.fromStringInput("A15"))
                     .build(trainingDataStream, true, false);
         } catch (IOException e) {
@@ -72,34 +72,23 @@ class AustralianDataset {
                     .setDoBalance(false)
                     .addIgnoredColumn("Id")
                     .addColumn(IntegerColumn.fromStringInput("A1"))
-                    .addColumn(IntegerColumn.fromStringInput("A2", -1, 5))
-                    .addColumn(IntegerColumn.fromStringInput("A3", -1, 5))
+                    .addColumn(IntegerColumn.fromStringInput("A2", -1, null, discretizerSupplier.get()))
+                    .addColumn(IntegerColumn.fromStringInput("A3", -1, null, discretizerSupplier.get()))
                     .addColumn(IntegerColumn.fromStringInput("A4"))
                     .addColumn(IntegerColumn.fromStringInput("A5"))
                     .addColumn(IntegerColumn.fromStringInput("A6"))
-                    .addColumn(IntegerColumn.fromStringInput("A7", -1, 5))
+                    .addColumn(IntegerColumn.fromStringInput("A7", -1, null, discretizerSupplier.get()))
                     .addColumn(IntegerColumn.fromStringInput("A8"))
                     .addColumn(IntegerColumn.fromStringInput("A9"))
-                    .addColumn(IntegerColumn.fromStringInput("A10", -1, 5))
+                    .addColumn(IntegerColumn.fromStringInput("A10", -1, null, discretizerSupplier.get()))
                     .addColumn(IntegerColumn.fromStringInput("A11"))
                     .addColumn(IntegerColumn.fromStringInput("A12"))
-                    .addColumn(IntegerColumn.fromStringInput("A13", -1, 5))
-                    .addColumn(IntegerColumn.fromStringInput("A14", -1, 5))
+                    .addColumn(IntegerColumn.fromStringInput("A13", -1, null, discretizerSupplier.get()))
+                    .addColumn(IntegerColumn.fromStringInput("A14", -1, null, discretizerSupplier.get()))
                     .addTargetColumn(IntegerColumn.fromStringInput("A15"))
                     .build(trainingDataStream, true, false);
         } catch (IOException e) {
             throw new RuntimeException("Could not read data");
-        }
-    }
-
-    private static final class TicketNumberTransformer implements Transformer {
-
-        @Override
-        public Serializable apply(Serializable serializable) {
-            // Transforms the ticket column to contain only the ticket number without ticket prefixes
-            String replaced = ((String) serializable).replaceAll("[^\\d]+", "");
-
-            return ("".equals(replaced)) ? -1 : replaced;
         }
     }
 
@@ -126,5 +115,16 @@ class AustralianDataset {
         }
 
 
+    }
+
+    private static final class TicketNumberTransformer implements Transformer {
+
+        @Override
+        public Serializable apply(Serializable serializable) {
+            // Transforms the ticket column to contain only the ticket number without ticket prefixes
+            String replaced = ((String) serializable).replaceAll("[^\\d]+", "");
+
+            return ("".equals(replaced)) ? -1 : replaced;
+        }
     }
 }
