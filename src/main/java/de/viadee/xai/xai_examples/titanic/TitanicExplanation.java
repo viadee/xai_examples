@@ -41,22 +41,23 @@ public class TitanicExplanation {
         // H2O default builder
         final AnchorConstructionBuilder<TabularInstance> h2oBuilder = anchorTabular
                 .createDefaultBuilder(h2oModel::predict, explainedInstance);
+        // TODO enable random forest again - there seems to be an issue with it
         // RandomForest default builder
-        final AnchorConstructionBuilder<TabularInstance> randomForestBuilder = anchorTabular
-                .createDefaultBuilder(randomForestModel, explainedInstance);
+        //final AnchorConstructionBuilder<TabularInstance> randomForestBuilder = anchorTabular
+        //        .createDefaultBuilder(randomForestModel, explainedInstance);
 
 
         // Create local explanations
         System.out.println("====H2O Local Explanation====");
         printLocalExplanationResult(explainedInstance, anchorTabular, h2oBuilder);
-        System.out.println("====Random Forest Local Explanation====");
-        printLocalExplanationResult(explainedInstance, anchorTabular, randomForestBuilder);
+        //System.out.println("====Random Forest Local Explanation====");
+        //printLocalExplanationResult(explainedInstance, anchorTabular, randomForestBuilder);
 
         // Create global explanations
         System.out.println("====H2O Global Explanation====");
         printGlobalExplanationResult(anchorTabular, h2oBuilder);
-        System.out.println("====Random Forest Global Explanation====");
-        printGlobalExplanationResult(anchorTabular, randomForestBuilder);
+        //System.out.println("====Random Forest Global Explanation====");
+        //printGlobalExplanationResult(anchorTabular, randomForestBuilder);
     }
 
     private static void printLocalExplanationResult(TabularInstance instance, AnchorTabular tabular,
