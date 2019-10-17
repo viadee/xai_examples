@@ -1,6 +1,7 @@
 package de.viadee.xai_examples.cervical_cancer;
 
 import de.viadee.discretizers4j.impl.ManualDiscretizer;
+import de.viadee.discretizers4j.impl.PercentileMedianDiscretizer;
 import de.viadee.xai.anchor.adapter.tabular.AnchorTabular;
 import de.viadee.xai.anchor.adapter.tabular.builder.AnchorTabularBuilderByName;
 import de.viadee.xai.anchor.adapter.tabular.column.BooleanColumn;
