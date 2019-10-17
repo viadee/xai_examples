@@ -33,21 +33,27 @@
         <dependency>
             <groupId>de.viadee.xai.anchor</groupId>
             <artifactId>algorithm</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.2</version>
         </dependency>
 
         <!-- AnchorJ Default Solutions Extension containing AnchorTabular -->
         <dependency>
             <groupId>de.viadee.xai.anchor</groupId>
             <artifactId>DefaultConfigsAdapter</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.2</version>
         </dependency>
 
         <!-- AnchorJ Default Machine Learning Models -->
         <dependency>
             <groupId>de.viadee.xai.anchor</groupId>
             <artifactId>DefaultMLMethods</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>de.viadee</groupId>
+            <artifactId>discretizer4j</artifactId>
+            <version>1.0.0</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/ai.h2o/h2o-genmodel -->
