@@ -21,21 +21,21 @@ Using Apache Maven, the required anchorj dependencies are easily referenced and 
     <dependency>
          <groupId>de.viadee.xai.anchor</groupId>
          <artifactId>algorithm</artifactId>
-         <version>1.0-SNAPSHOT</version>
+         <version>1.0.2</version>
     </dependency>
     
     <!-- AnchorJ Default Solutions Extension containing AnchorTabular -->
     <dependency>
         <groupId>de.viadee.xai.anchor</groupId>
         <artifactId>DefaultConfigsAdapter</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.3</version>
     </dependency>
     
     <!-- AnchorJ Default Machine Learning Models -->
     <dependency>
         <groupId>de.viadee.xai.anchor</groupId>
         <artifactId>DefaultMLMethods</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.3</version>
     </dependency>
     
     <!-- Loading data from CSV -->
@@ -90,22 +90,27 @@ grouping various feature values.
 
 The Titanic dataset gets loaded and configured as follows. 
 
-    AnchorTabular anchorTabular = new AnchorTabular.Builder()
-            .setDoBalance(true)
-            .addIgnoredColumn("PassengerId")
-            .addTargetColumn(IntegerColumn.fromStringInput("Survived"))
-            .addColumn(IntegerColumn.fromStringInput("Pclass"))
-            .addColumn(new StringColumn("Name"))
-            .addColumn(new StringColumn("Sex"))
-            .addColumn(DoubleColumn.fromStringInput("Age", -1, 5))
-            .addColumn(IntegerColumn.fromStringInput("SibSp"))
-            .addColumn(IntegerColumn.fromStringInput("Parch"))
-            .addColumn(new StringColumn("Ticket"))
-            .addColumn(DoubleColumn.fromStringInput("Fare", 6))
-            .addIgnoredColumn(new StringColumn("Cabin"))
-            .addColumn(new StringColumn("Embarked"))
-            .build(ClassLoader.getSystemResourceAsStream("titanic/train.csv"), true, false);
+    AnchorTabular anchorTabular = new AnchorTabularBuilderSequential()
+     .setDoBalance(false)
+     .addIgnoredColumn("PassengerId")
+     .addTargetColumn(IntegerColumn.fromStringInput("Survived"))
+     .addColumn(IntegerColumn.fromStringInput("Pclass"))
+     .addColumn(new StringColumn("Name"))
+     .addColumn(new StringColumn("Sex"))
+     .addColumn(DoubleColumn.fromStringInput("Age", -1, 5))
+     .addColumn(IntegerColumn.fromStringInput("SibSp"))
+     .addColumn(IntegerColumn.fromStringInput("Parch"))
+     .addColumn(IntegerColumn.fromStringInput("Ticket", -1,
+             Collections.singletonList(new TicketNumberTransformer()), null))
+     .addColumn(DoubleColumn.fromStringInput("Fare", -1, 6))
+     .addColumn(new StringColumn("Cabin", Arrays.asList(
+             new ReplaceNonEmptyTransformer(true),
+             new ReplaceEmptyTransformer(false)),
+             null))
+     .addColumn(new StringColumn("Embarked"))
+     .build(ClassLoader.getSystemResourceAsStream("titanic/train.csv", true, false);
 
+Using the sequential tabular builder, definitions for columns are stated in ascending order - just as they appear in the data.
 Please note that attributes are described in greater depth in the code. 
 
 All of the configured attributes, such as columns, transformations and discretizations can be implemented and 
@@ -201,8 +206,8 @@ Anchors is a <span style="background-color: #FFFF00">Model-Agnostic</span> expla
 
 However, for this example a default solution, i.e. a random forest model is used to remove the need for requirements.
 
-    TabularRandomForestClassifier classifier = TabularRandomForestClassifier
-                    .createAndFit(50, anchorTabular.getTabularInstances());
+    TabularRandomForestClassifier randomForestModel = new TabularRandomForestClassifier(100, true);
+    randomForestModel.fit(anchorTabular.getTabularInstances());
                     
 Nonetheless, an arbitrary and custom model can easily be included by implementing the 
 <code>ClassificationFunction</code> interface and its predict method.
